@@ -79,22 +79,27 @@ class LoginPage extends StatelessWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 60.0),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Don't have an account?",
                             style: TextStyle(
                                 color: gris,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 15.0),
                           ),
-                          Text(
-                            "  Sign up",
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15.0),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, "sign-up");
+                            },
+                            child: const Text(
+                              "  Sign up",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.0),
+                            ),
                           ),
                         ],
                       ),
@@ -111,10 +116,9 @@ class LoginPage extends StatelessWidget {
 Widget _emailInput() {
   return Container(
     margin: const EdgeInsets.only(top: 40.0),
-    padding: const EdgeInsets.only(left: 20.0),
+    padding: const EdgeInsets.only(left: 10.0),
     decoration: BoxDecoration(
-        color: const Color.fromRGBO(142, 142, 247, 1.2),
-        borderRadius: BorderRadius.circular(30.0)),
+        color: bgInputs, borderRadius: BorderRadius.circular(20.0)),
     child: const TextField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
@@ -127,10 +131,9 @@ Widget _emailInput() {
 Widget _passwordInput() {
   return Container(
     margin: const EdgeInsets.only(top: 15.0),
-    padding: const EdgeInsets.only(left: 20.0),
+    padding: const EdgeInsets.only(left: 10.0),
     decoration: BoxDecoration(
-        color: const Color.fromRGBO(142, 142, 247, 1.2),
-        borderRadius: BorderRadius.circular(30.0)),
+        color: bgInputs, borderRadius: BorderRadius.circular(20.0)),
     child: const TextField(
       obscureText: true,
       decoration: InputDecoration(

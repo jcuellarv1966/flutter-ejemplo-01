@@ -1,6 +1,5 @@
 import 'package:curso_delivery_app/src/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
