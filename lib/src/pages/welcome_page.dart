@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:curso_delivery_app/src/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -71,7 +72,13 @@ class WelcomePage extends StatelessWidget {
                       shape: const BeveledRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()),
+                      );
+                    },
                     child: const Align(
                       alignment: Alignment.center,
                       child: Text("Login",
@@ -171,8 +178,8 @@ class WelcomePage extends StatelessWidget {
                   children: [
                     const Image(
                         image: AssetImage('assets/reddit.png'),
-                        width: 24.0,
-                        height: 24.0),
+                        width: 22.0,
+                        height: 22.0),
                     Container(
                       margin: const EdgeInsets.only(left: 6.0),
                       child: const Text(
