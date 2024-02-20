@@ -1,7 +1,7 @@
-import 'package:curso_delivery_app/src/tabs/explore_tab.dart';
-import 'package:curso_delivery_app/src/tabs/favourite_tab.dart';
-import 'package:curso_delivery_app/src/tabs/my_order_tab.dart';
-import 'package:curso_delivery_app/src/tabs/profile_tab.dart';
+import 'package:curso_delivery_app/src/features/presentation/tabs/explore_tab.dart';
+import 'package:curso_delivery_app/src/features/presentation/tabs/favourite_tab.dart';
+import 'package:curso_delivery_app/src/features/presentation/tabs/my_order_tab.dart';
+import 'package:curso_delivery_app/src/features/presentation/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
 
 class TabsPage extends StatefulWidget {
@@ -12,7 +12,7 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
-  // ignore: unused_field, prefer_final_fields
+  // ignore: prefer_final_fields
   List<Widget> _widgetOptions = [
     const ExploreTab(),
     const MyOrderTab(),
@@ -20,10 +20,8 @@ class _TabsPageState extends State<TabsPage> {
     const ProfileTab(),
   ];
 
-  // ignore: unused_field, prefer_final_fields
-  int _selectedItemIndex = 0;
+  var _selectedItemIndex = 0;
 
-  // ignore: unused_element
   void _cambiarWidget(int index) {
     setState(() {
       _selectedItemIndex = index;

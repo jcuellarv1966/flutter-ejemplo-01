@@ -1,5 +1,5 @@
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/widgets/back_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {

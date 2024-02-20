@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/widgets/back_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/widgets/back_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
