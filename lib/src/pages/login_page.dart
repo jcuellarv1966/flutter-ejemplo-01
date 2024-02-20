@@ -158,10 +158,7 @@ Widget _loginButton(BuildContext context) {
                 borderRadius: BorderRadius.all(Radius.circular(5))),
           ),
           onPressed: () {
-            Navigator.push(
-              BuildContext as BuildContext,
-              MaterialPageRoute(builder: (context) => const LoginPage()),
-            );
+            Navigator.pushNamed(context, "tabs");
           },
           child: const Align(
             alignment: Alignment.center,
