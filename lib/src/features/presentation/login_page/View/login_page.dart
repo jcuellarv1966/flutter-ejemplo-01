@@ -1,7 +1,8 @@
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/widgets/back_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/back_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -44,14 +45,8 @@ class LoginPage extends StatelessWidget {
                 child: Center(
                     child: Column(
                   children: [
-                    Text(
-                      "Welcome Back",
-                      style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30.0,
-                      ),
-                    ),
+                    headerText("Welcome Back", Theme.of(context).primaryColor,
+                        FontWeight.bold, 30.0),
                     const Text("Login to your account",
                         style: TextStyle(
                           color: gris,

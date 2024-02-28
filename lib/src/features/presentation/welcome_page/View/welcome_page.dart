@@ -1,3 +1,4 @@
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -37,15 +38,11 @@ class WelcomePage extends StatelessWidget {
                       fontSize: 56.0),
                 )),
             Container(
-                padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 56.0, vertical: 20.0),
-                child: const Text(
-                  'Alta Tecnologia en Inversiones Rentables',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 36.0),
-                )),
+              padding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 56.0, vertical: 20.0),
+              child: headerText('Alta Tecnologia en Inversiones Rentables',
+                  Colors.white, FontWeight.bold, 36.0),
+            ),
             Container(
                 padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 56.0, vertical: 40),

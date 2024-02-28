@@ -1,4 +1,5 @@
 import 'package:curso_delivery_app/src/colors/colors.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
 
@@ -19,17 +20,13 @@ class ExploreTab extends StatelessWidget {
                   children: [
                     _topBar(context),
                     Container(
-                        margin: const EdgeInsets.symmetric(vertical: 20.0),
-                        alignment: Alignment.centerLeft,
-                        padding: const EdgeInsetsDirectional.symmetric(
-                            horizontal: 20.0, vertical: 2),
-                        child: const Text(
-                          'Discover new Finance Assets',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24.0),
-                        )),
+                      margin: const EdgeInsets.symmetric(vertical: 20.0),
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 20.0, vertical: 2),
+                      child: headerText('Discover new Finance Assets',
+                          Colors.black, FontWeight.bold, 24.0),
+                    ),
                   ],
                 ),
               ),
