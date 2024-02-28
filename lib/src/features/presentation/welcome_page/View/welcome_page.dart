@@ -1,7 +1,9 @@
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+// ignore: unused_import
 import 'package:curso_delivery_app/src/features/presentation/login_page/View/login_page.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -55,10 +57,12 @@ class WelcomePage extends StatelessWidget {
                 )),
             // ignore: sized_box_for_whitespace
             Container(
-                width: 350.0,
-                height: 36.0,
-                margin: const EdgeInsets.only(top: 20.0),
-                child: ElevatedButton(
+              width: 350.0,
+              height: 36.0,
+              margin: const EdgeInsets.only(top: 20.0),
+              // ignore: prefer_const_constructors
+              child: primaryButton(context, "Login"),
+              /* ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.deepOrange,
                       // side: BorderSide(color: Colors.yellow, width: 5),
@@ -84,7 +88,8 @@ class WelcomePage extends StatelessWidget {
                               color: Colors.white,
                               fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center),
-                    ))),
+                    )), */
+            ),
             // ignore: sized_box_for_whitespace
             Container(
               width: 350.0,
