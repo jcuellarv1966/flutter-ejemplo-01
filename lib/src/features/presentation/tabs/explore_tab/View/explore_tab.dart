@@ -44,6 +44,11 @@ class ExploreTab extends StatelessWidget {
                   "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
               _populares(context,
                   "https://plus.unsplash.com/premium_photo-1670249421324-232b654455d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+              const SizedBox(
+                height: 10.0,
+              ),
+              _headers(context, "Collections", "Show all"),
+              _sliderCollections(),
             ]),
           ),
         ],
@@ -103,7 +108,6 @@ Widget _topBar(BuildContext context) {
 }
 
 Widget _sliderCards() {
-  // ignore: sized_box_for_whitespace
   return Container(
       height: 350.0,
       margin: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -306,6 +310,47 @@ Widget _populares(BuildContext context, String foto) {
             )
           ],
         )
+      ],
+    ),
+  );
+}
+
+Widget _sliderCollections() {
+  return Container(
+    height: 180.0,
+    margin: const EdgeInsets.symmetric(horizontal: 15.0),
+    child: Swiper(
+      itemCount: 4,
+      layout: SwiperLayout.DEFAULT,
+      itemBuilder: (BuildContext context, int index) {
+        return ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            /* return const Text("Hola ..."); */
+            return _tarjetaCollection(context);
+          },
+        );
+      },
+    ),
+  );
+}
+
+Widget _tarjetaCollection(BuildContext context) {
+  return Container(
+    margin: const EdgeInsets.all(5.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: const Image(
+            width: 300,
+            height: 150,
+            fit: BoxFit.cover,
+            image: NetworkImage(
+                "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYWRpbmd8ZW58MHx8MHx8fDA%3D"),
+          ),
+        ),
       ],
     ),
   );
