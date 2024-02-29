@@ -1,4 +1,6 @@
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/alert_dialog.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/back_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/done_button.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
@@ -90,70 +92,11 @@ Widget _sendButton(BuildContext context) {
 
 // ignore: unused_element, non_constant_identifier_names
 void _ShowAlerta(BuildContext context) {
-  showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20.0))),
-          // ignore: avoid_unnecessary_containers, sized_box_for_whitespace
-          content: Container(
-            height: 360,
-            child: Column(
-              children: [
-                const Image(
-                  image: AssetImage("assets/lock.png"),
-                  width: 130,
-                  height: 130,
-                ),
-                // ignore: avoid_unnecessary_containers
-                Container(
-                  margin: const EdgeInsets.all(15.0),
-                  child: headerText("Your password has been reset",
-                      Theme.of(context).primaryColor, FontWeight.bold, 20.0),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(15.0),
-                  child: Text(
-                    "You'll shortly receive an email with a code to setup a mew password.'",
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                ),
-                _doneButton(context)
-              ],
-            ),
-          ),
-        );
-      });
-}
-
-// ignore: unused_element
-Widget _doneButton(BuildContext context) {
-  return Container(
-      width: 370.0,
-      height: 36.0,
-      margin: const EdgeInsets.only(top: 20.0),
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepOrange,
-            shape: const BeveledRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, "login");
-          },
-          child: const Align(
-            alignment: Alignment.center,
-            child: Text("Done",
-                style: TextStyle(
-                    fontSize: 17.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                textAlign: TextAlign.center),
-          )));
+  showAlertDialog(
+      context,
+      const AssetImage("assets/lock.png"),
+      "Your password has been reset.",
+      "You'll shortly receive an email with a code to setup a mew password.'",
+      "Done",
+      doneButton(context, "Done"));
 }
