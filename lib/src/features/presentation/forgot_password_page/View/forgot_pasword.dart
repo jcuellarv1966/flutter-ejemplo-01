@@ -97,6 +97,5 @@ void _ShowAlerta(BuildContext context) {
       const AssetImage("assets/lock.png"),
       "Your password has been reset.",
       "You'll shortly receive an email with a code to setup a mew password.'",
-      "Done",
       doneButton(context, "Done"));
 }

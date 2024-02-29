@@ -1,19 +1,8 @@
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
-/* AssetImage("assets/lock.png") */
-/* "Your password has been reset" */
-/* "You'll shortly receive an email with a code to setup a mew password.'" */
-/* "Done" */
-/* Navigator.pushNamed(context, "login"); */
-
-void showAlertDialog(
-    BuildContext context,
-    ImageProvider<Object> imagePath,
-    String headerTitle,
-    String headerSubTitle,
-    String labelButton,
-    Widget doneButton) async {
+Future showAlertDialog(BuildContext context, ImageProvider<Object> imagePath,
+    String headerTitle, String headerSubTitle, Widget doneButton) async {
   await showDialog(
       context: context,
       barrierDismissible: true,
@@ -55,6 +44,7 @@ void showAlertDialog(
       });
 }
 
+// ignore: unused_element
 Widget _doneButton(
     BuildContext context, String labelButton, Function doneButtonFunc) {
   return Container(
