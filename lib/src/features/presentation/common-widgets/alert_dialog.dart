@@ -1,5 +1,6 @@
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
+import 'package:curso_delivery_app/src/colors/colors.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 
 Future showAlertDialog(BuildContext context, ImageProvider<Object> imagePath,
     String headerTitle, String headerSubTitle, Widget doneButton) async {
@@ -22,15 +23,15 @@ Future showAlertDialog(BuildContext context, ImageProvider<Object> imagePath,
                 ),
                 Container(
                   margin: const EdgeInsets.all(15.0),
-                  child: headerText(headerTitle, Theme.of(context).primaryColor,
-                      FontWeight.bold, 20.0),
+                  child: headerText(
+                      headerTitle, primaryColor, FontWeight.bold, 20.0),
                 ),
                 Container(
                   margin: const EdgeInsets.all(15.0),
                   child: Text(
                     headerSubTitle,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
+                    style: const TextStyle(
+                      color: primaryColor,
                       fontWeight: FontWeight.w400,
                       fontSize: 15.0,
                     ),

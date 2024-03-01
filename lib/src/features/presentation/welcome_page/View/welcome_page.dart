@@ -1,10 +1,9 @@
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-// ignore: unused_import
-import 'package:curso_delivery_app/src/features/presentation/login_page/View/login_page.dart';
+import 'package:curso_delivery_app/src/colors/colors.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
 
 // ignore: use_key_in_widget_constructors
 class WelcomePage extends StatelessWidget {
@@ -35,14 +34,14 @@ class WelcomePage extends StatelessWidget {
                 child: const Text(
                   'Tec Data',
                   style: TextStyle(
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(0, 0, 255, 1.0),
+                      fontWeight: FontWeight.w900,
                       fontSize: 56.0),
                 )),
             Container(
               padding: const EdgeInsetsDirectional.symmetric(
                   horizontal: 56.0, vertical: 20.0),
-              child: headerText('Alta Tecnologia en Inversiones Rentables',
+              child: headerText('High Technology in Profitable Investments',
                   Colors.white, FontWeight.bold, 36.0),
             ),
             Container(
@@ -55,144 +54,37 @@ class WelcomePage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontSize: 18.0),
                 )),
-            // ignore: sized_box_for_whitespace
-            Container(
-              width: 350.0,
-              height: 36.0,
-              margin: const EdgeInsets.only(top: 20.0),
-              // ignore: prefer_const_constructors
-              child: primaryButton(context, "Login"),
-              /* ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepOrange,
-                      // side: BorderSide(color: Colors.yellow, width: 5),
-                      textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontStyle: FontStyle.normal),
-                      shape: const BeveledRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5))),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginPage()),
-                      );
-                    },
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Text("Login",
-                          style: TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500),
-                          textAlign: TextAlign.center),
-                    )), */
-            ),
-            // ignore: sized_box_for_whitespace
-            Container(
-              width: 350.0,
-              height: 36.0,
-              margin: const EdgeInsets.only(top: 20.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  // side: BorderSide(color: Colors.yellow, width: 5),
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontStyle: FontStyle.normal),
-                  shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                ),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Image(
-                        image: AssetImage('assets/facebook.webp'),
-                        width: 32.0,
-                        height: 32.0),
-                    Container(
-                      margin: const EdgeInsets.only(left: 6.0),
-                      child: const Text(
-                        'Connect with facebook',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: 350.0,
-              height: 36.0,
-              margin: const EdgeInsets.only(top: 20.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo,
-                  // side: BorderSide(color: Colors.yellow, width: 5),
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontStyle: FontStyle.normal),
-                  shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                ),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Image(
-                        image: AssetImage('assets/instagram.jpeg'),
-                        width: 20.0,
-                        height: 20.0),
-                    Container(
-                      margin: const EdgeInsets.only(left: 6.0),
-                      child: const Text(
-                        'Connect with instagram',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: 350.0,
-              height: 36.0,
-              margin: const EdgeInsets.only(top: 20.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  // side: BorderSide(color: Colors.yellow, width: 5),
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontStyle: FontStyle.normal),
-                  shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                ),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Image(
-                        image: AssetImage('assets/reddit.png'),
-                        width: 22.0,
-                        height: 22.0),
-                    Container(
-                      margin: const EdgeInsets.only(left: 6.0),
-                      child: const Text(
-                        'Connect with reddit',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+            roundedButton(
+                context: context,
+                labelButton: "Log in",
+                color: orange,
+                func: () {
+                  Navigator.pushNamed(context, "login");
+                }),
+            roundedButton(
+                context: context,
+                labelButton: "Connect with Facebook",
+                color: fbButtonColor,
+                isWithIcon: true,
+                icon: const AssetImage("assets/facebook.webp"),
+                // ignore: avoid_print
+                func: () => print("goToFacebook")),
+            roundedButton(
+                context: context,
+                labelButton: "Connect with instagram",
+                color: Colors.red,
+                isWithIcon: true,
+                icon: const AssetImage('assets/instagram.jpeg'),
+                // ignore: avoid_print
+                func: () => print("goToInstagram")),
+            roundedButton(
+                context: context,
+                labelButton: "Connect with reddit",
+                color: Colors.green,
+                isWithIcon: true,
+                icon: const AssetImage('assets/reddit.png'),
+                // ignore: avoid_print
+                func: () => print("goToReddit")),
           ],
         ),
       ],

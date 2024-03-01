@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:curso_delivery_app/src/colors/colors.dart';
+
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/alert_dialog.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/favourite_tab/View/favourite_tab.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
-import 'package:flutter/material.dart';
 
 class TabsPage extends StatefulWidget {
   const TabsPage({super.key});
@@ -48,7 +51,7 @@ class _TabsPageState extends State<TabsPage> {
   Widget _bottonNavigationBar(BuildContext context) {
     return BottomNavigationBar(
       iconSize: 30.0,
-      selectedItemColor: Theme.of(context).secondaryHeaderColor,
+      selectedItemColor: orange,
       unselectedItemColor: Colors.grey,
       currentIndex: _selectedItemIndex,
       onTap: _cambiarWidget,
@@ -69,32 +72,10 @@ class _TabsPageState extends State<TabsPage> {
         const AssetImage('assets/location.jpg'),
         "Enable Your Location",
         "Please allow to use your location to show nearly shop on the map.",
-        _doneButton(context, "Enabled location"));
-  }
-
-  Widget _doneButton(BuildContext context, String labelButton) {
-    return Container(
-        width: 370.0,
-        height: 36.0,
-        margin: const EdgeInsets.only(top: 20.0),
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrange,
-              shape: const BeveledRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
-            ),
-            onPressed: () {
-              // ignore: avoid_print
-              print("Enable geolocation ..");
-            },
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(labelButton,
-                  style: const TextStyle(
-                      fontSize: 17.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500),
-                  textAlign: TextAlign.center),
-            )));
+        roundedButton(
+            context: context,
+            labelButton: "Enabled location",
+            color: orange,
+            func: () {}));
   }
 }

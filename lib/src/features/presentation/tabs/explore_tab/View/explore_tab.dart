@@ -1,7 +1,7 @@
-import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
+import 'package:curso_delivery_app/src/colors/colors.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({super.key});
@@ -179,7 +179,7 @@ Widget _tarjeta(BuildContext context) {
               height: 18.0,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white24,
+                  backgroundColor: orange,
                   textStyle: const TextStyle(
                       color: Colors.white,
                       fontSize: 9,
@@ -293,7 +293,7 @@ Widget _populares(BuildContext context, String foto) {
                         height: 18.0,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.amber,
+                            backgroundColor: orange,
                             textStyle: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 10,
