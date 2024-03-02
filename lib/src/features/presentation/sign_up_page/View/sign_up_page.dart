@@ -1,7 +1,7 @@
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/back_button.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 
@@ -24,7 +24,9 @@ class SignUpPage extends StatelessWidget {
           child: Column(
             children: [
               headerText(
-                  "Create an Account", primaryColor, FontWeight.bold, 30.0),
+                  texto: "Create an Account",
+                  color: primaryColor,
+                  fontSize: 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),

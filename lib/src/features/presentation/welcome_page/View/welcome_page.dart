@@ -41,8 +41,10 @@ class WelcomePage extends StatelessWidget {
             Container(
               padding: const EdgeInsetsDirectional.symmetric(
                   horizontal: 56.0, vertical: 20.0),
-              child: headerText('High Technology in Profitable Investments',
-                  Colors.white, FontWeight.bold, 36.0),
+              child: headerText(
+                  texto: 'High Technology in Profitable Investments',
+                  color: Colors.white,
+                  fontSize: 36.0),
             ),
             Container(
                 padding: const EdgeInsetsDirectional.symmetric(

@@ -47,7 +47,9 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                   children: [
                     headerText(
-                        "Welcome Back", primaryColor, FontWeight.bold, 30.0),
+                        texto: "Welcome Back",
+                        color: primaryColor,
+                        fontSize: 30.0),
                     const Text("Login to your account",
                         style: TextStyle(
                           color: gris,

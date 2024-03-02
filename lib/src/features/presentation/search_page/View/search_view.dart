@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_3/flutter_swiper_3.dart';
+
 import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_double.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/card_vertical.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -31,8 +35,17 @@ class SearchPage extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 10.0),
                         alignment: Alignment.centerLeft,
                         child: headerText(
-                            "Search", Colors.black, FontWeight.bold, 30.0)),
+                            texto: "Search",
+                            color: Colors.black,
+                            fontSize: 30.0)),
                     _searchInput(context),
+                    const SizedBox(height: 20.0),
+                    headerDoubleText(
+                      textHeader: "Recent Search",
+                      textAction: "Clear All",
+                      func: () {},
+                    ),
+                    _sliderRecentSearch(),
                   ],
                 ),
               )
@@ -61,6 +74,32 @@ Widget _searchInput(BuildContext context) {
         hintText: "Search",
         border: OutlineInputBorder(borderSide: BorderSide.none),
       ),
+    ),
+  );
+}
+
+Widget _sliderRecentSearch() {
+  return Container(
+    margin: const EdgeInsets.only(top: 5.0),
+    height: 190.0,
+    child: Swiper(
+      itemCount: 4,
+      layout: SwiperLayout.DEFAULT,
+      itemBuilder: (BuildContext context, int index) {
+        return ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return cardVertical(
+                context: context,
+                width: 160.0,
+                height: 120.0,
+                image: const NetworkImage(
+                    "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFua2luZ3xlbnwwfHwwfHx8MA%3D%3D"),
+                title: "Selecta aoption",
+                subTitle: "Make a major change");
+          },
+        );
+      },
     ),
   );
 }

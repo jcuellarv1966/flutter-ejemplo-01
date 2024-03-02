@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
+
 import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
 
@@ -24,8 +25,8 @@ class ExploreTab extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 15.0, vertical: 2),
-                      child: headerText('Discover new Finance Assets',
-                          Colors.black, FontWeight.bold, 24.0),
+                      child: headerText(
+                          texto: 'Discover new Finance Assets', fontSize: 24.0),
                     ),
                   ],
                 ),
@@ -206,7 +207,7 @@ Widget _headers(BuildContext context, String textHeader, String textOption) {
       Container(
         margin: const EdgeInsets.symmetric(horizontal: 20.0),
         alignment: Alignment.centerLeft,
-        child: headerText(textHeader, Colors.black, FontWeight.bold, 18.0),
+        child: headerText(texto: textHeader, fontSize: 18.0),
       ),
       const Spacer(),
       GestureDetector(
@@ -252,8 +253,8 @@ Widget _populares(BuildContext context, String foto) {
               children: [
                 Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: headerText("This is a first option", Colors.black,
-                        FontWeight.bold, 16.0)),
+                    child: headerText(
+                        texto: "This is a first option", fontSize: 16.0)),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: const EdgeInsets.symmetric(horizontal: 10.0),
