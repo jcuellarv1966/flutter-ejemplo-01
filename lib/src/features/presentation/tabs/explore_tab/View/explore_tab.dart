@@ -1,9 +1,9 @@
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/populars_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/populars_card.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({super.key});
@@ -33,7 +33,10 @@ class ExploreTab extends StatelessWidget {
                 ),
               ),
               _sliderCards(),
-              _headers(context, "Popular this Week ...", "Show all"),
+              Container(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child:
+                      _headers(context, "Popular this Week ...", "Show all")),
               PopularesCard(
                   context: context,
                   image: const NetworkImage(
@@ -97,7 +100,9 @@ class ExploreTab extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              _headers(context, "Collections", "Show all"),
+              Container(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: _headers(context, "Collections", "Show all")),
               _sliderCollections(),
             ]),
           ),
@@ -153,7 +158,9 @@ Widget _topBar(BuildContext context) {
             size: 30,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "filter");
+          },
         ),
       ),
     ],
