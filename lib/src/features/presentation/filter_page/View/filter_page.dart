@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
-import 'package:flutter/widgets.dart';
+import 'package:curso_delivery_app/src/features/presentation/filter_page/customWidgets/categories_filters.dart';
 
 class FilterPage extends StatefulWidget {
   const FilterPage({super.key});
@@ -46,6 +46,26 @@ class _FilterPageState extends State<FilterPage> {
                     fontSize: 15.0),
               ),
             ),
+          ],
+        ),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverList(
+                delegate: SliverChildListDelegate([
+              Container(
+                alignment: Alignment.centerLeft,
+                margin:
+                    const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
+                child: headerText(
+                    texto: "CATEGORIES",
+                    color: gris,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 17.0),
+              ),
+              Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: const CategoriesFilter()),
+            ])),
           ],
         ),
       ),
