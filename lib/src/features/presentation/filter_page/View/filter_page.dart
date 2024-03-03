@@ -1,3 +1,4 @@
+import 'package:curso_delivery_app/src/features/presentation/filter_page/customWidgets/price_filter.dart';
 import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
@@ -100,6 +101,22 @@ class _FilterPageState extends State<FilterPage> {
                     fontSize: 17.0),
               ),
               _filterContainer(),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.only(
+                    top: 5.0, bottom: 5.0, left: 15.0, right: 15.0),
+                child: headerText(
+                    texto: "PRICE",
+                    color: gris,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 17.0),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.only(
+                    top: 5.0, bottom: 5.0, left: 15.0, right: 15.0),
+                child: const PriceFilter(),
+              ),
             ])),
           ],
         ),
