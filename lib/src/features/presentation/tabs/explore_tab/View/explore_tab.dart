@@ -1,3 +1,4 @@
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/populars_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
 
@@ -33,18 +34,66 @@ class ExploreTab extends StatelessWidget {
               ),
               _sliderCards(),
               _headers(context, "Popular this Week ...", "Show all"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
-              _populares(context,
-                  "https://plus.unsplash.com/premium_photo-1670249421324-232b654455d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"),
+                  title: "This is a first option",
+                  subTitle: "Detail of this option ...",
+                  reviews: "4.50",
+                  ratings: "240 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"),
+                  title: "This is a second option",
+                  subTitle: "Detail of this option ...",
+                  reviews: "2.50",
+                  ratings: "360 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+                  title: "This is a third option",
+                  subTitle: "Detail of this option ...",
+                  reviews: "5.25",
+                  ratings: "120 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+                  title: "This is a fourth option",
+                  subTitle: "Detail of this option ...",
+                  reviews: "3.25",
+                  ratings: "520 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+                  title: "This is a fifth option",
+                  subTitle: "Detail of fifth option ...",
+                  reviews: "3.00",
+                  ratings: "225 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
+              PopularesCard(
+                  context: context,
+                  image: const NetworkImage(
+                      "https://plus.unsplash.com/premium_photo-1670249421324-232b654455d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGZpbmFuY2V8ZW58MHx8MHx8fDA%3D"),
+                  title: "This is a sixth option",
+                  subTitle: "Detail of this option ...",
+                  reviews: "4.85",
+                  ratings: "124 ratings",
+                  buttonText: "Delivery",
+                  hasActionButton: true),
               const SizedBox(
                 height: 10.0,
               ),
@@ -226,96 +275,6 @@ Widget _headers(BuildContext context, String textHeader, String textOption) {
         ),
       )
     ],
-  );
-}
-
-Widget _populares(BuildContext context, String foto) {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 15.0),
-    padding: const EdgeInsets.all(3),
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ClipRRect(
-              child: Image(
-                width: 80,
-                height: 80,
-                fit: BoxFit.cover,
-                image: NetworkImage(foto),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: headerText(
-                        texto: "This is a first option", fontSize: 16.0)),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: const Text(
-                    "Detail of this option ...",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12.0,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.star, color: amarillo, size: 16.0),
-                      const Text(
-                        "4.50",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 5.0),
-                        child: const Text(
-                          "240 ratings",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.0,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 15.0),
-                        width: 110.0,
-                        height: 18.0,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: orange,
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontStyle: FontStyle.normal),
-                          ),
-                          onPressed: () {},
-                          child: const Text("Delivery"),
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            )
-          ],
-        )
-      ],
-    ),
   );
 }
 
