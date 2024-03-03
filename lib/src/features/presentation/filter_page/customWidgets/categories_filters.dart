@@ -1,5 +1,5 @@
-import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:curso_delivery_app/src/colors/colors.dart';
 
 class CategoriesFilter extends StatefulWidget {
   const CategoriesFilter({super.key});
