@@ -81,8 +81,11 @@ Widget PopularesCard({
                                         fontStyle: FontStyle.normal),
                                   ),
                                   onPressed: () {},
-                                  // "Delivery"
-                                  child: Text(buttonText),
+                                  child: headerText(
+                                    texto: buttonText,
+                                    fontSize: 12.0,
+                                    color: Colors.white,
+                                  ),
                                 )
                               : const Text("")),
                     ],

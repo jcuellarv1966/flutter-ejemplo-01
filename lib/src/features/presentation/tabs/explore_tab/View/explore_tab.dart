@@ -251,7 +251,12 @@ Widget _tarjeta(BuildContext context) {
                       fontWeight: FontWeight.w400),
                 ),
                 onPressed: () {},
-                child: const Text('Delivery'),
+                child: headerText(
+                  texto: 'Delivery',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 9,
+                  color: Colors.white,
+                ),
               ),
             )
           ],
