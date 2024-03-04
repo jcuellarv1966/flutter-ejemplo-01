@@ -10,7 +10,6 @@ class ExploreTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_unnecessary_containers
     return SafeArea(
       child: CustomScrollView(
         slivers: [
@@ -102,8 +101,13 @@ class ExploreTab extends StatelessWidget {
               ),
               Container(
                   padding: const EdgeInsets.only(right: 10.0),
-                  child: _headers(context, "Collections", "Show all")),
-              _sliderCollections(),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categories");
+                    },
+                    child: _headers(context, "Categories", "Show all"),
+                  )),
+              _sliderCategories(),
             ]),
           ),
         ],
@@ -285,7 +289,7 @@ Widget _headers(BuildContext context, String textHeader, String textOption) {
   );
 }
 
-Widget _sliderCollections() {
+Widget _sliderCategories() {
   return Container(
     height: 180.0,
     margin: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -296,8 +300,7 @@ Widget _sliderCollections() {
         return ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
-            /* return const Text("Hola ..."); */
-            return _tarjetaCollection(context);
+            return _tarjetaCategorie(context);
           },
         );
       },
@@ -305,7 +308,7 @@ Widget _sliderCollections() {
   );
 }
 
-Widget _tarjetaCollection(BuildContext context) {
+Widget _tarjetaCategorie(BuildContext context) {
   return Container(
     margin: const EdgeInsets.all(5.0),
     child: Column(
