@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:curso_delivery_app/src/colors/colors.dart';
 
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/alert_dialog.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Alerts/alert_dialog.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Buttons/rounded_button.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/favourite_tab/View/favourite_tab.dart';
 import 'package:curso_delivery_app/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';

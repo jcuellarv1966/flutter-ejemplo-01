@@ -28,7 +28,7 @@ class _PriceFilterState extends State<PriceFilter> {
         ),
         // ignore: sized_box_for_whitespace
         Container(
-          width: 280.0,
+          width: 274.0,
           child: RangeSlider(
             activeColor: orange,
             inactiveColor: gris,

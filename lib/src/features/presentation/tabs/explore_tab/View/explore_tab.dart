@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/populars_card.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Cards/populars_card.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({super.key});

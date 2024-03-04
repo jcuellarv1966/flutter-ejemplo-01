@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Buttons/rounded_button.dart';
 
 // ignore: use_key_in_widget_constructors
 class WelcomePage extends StatelessWidget {

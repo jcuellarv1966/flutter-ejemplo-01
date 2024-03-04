@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
 
 Future showAlertDialog(BuildContext context, ImageProvider<Object> imagePath,
     String headerTitle, String headerSubTitle, Widget doneButton) async {

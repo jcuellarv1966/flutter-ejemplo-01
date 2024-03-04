@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
 
 // ignore: must_be_immutable
 class ListTileChecked extends StatefulWidget {

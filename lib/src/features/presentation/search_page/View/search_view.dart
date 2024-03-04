@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_3/flutter_swiper_3.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_double.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/card_vertical.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/populars_card.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_double.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Cards/card_vertical.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Cards/populars_card.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

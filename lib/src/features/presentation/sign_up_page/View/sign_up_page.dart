@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/rounded_button.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/back_button.dart';
-import 'package:curso_delivery_app/src/features/presentation/common-widgets/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Buttons/rounded_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/BackButtons/back_button.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
