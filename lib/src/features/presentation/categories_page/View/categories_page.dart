@@ -79,7 +79,9 @@ class CategoriesPage extends StatelessWidget {
 Widget _card(BuildContext context, ImageProvider<Object> image, String title,
     String subTitle) {
   return GestureDetector(
-    onTap: () {},
+    onTap: () {
+      Navigator.pushNamed(context, "categorie-detail");
+    },
     child: Stack(
       children: [
         ClipRRect(
@@ -95,7 +97,7 @@ Widget _card(BuildContext context, ImageProvider<Object> image, String title,
           width: 175.0,
           height: 165.0,
           decoration: BoxDecoration(
-            color: const Color.fromRGBO(0, 0, 0, 1.4),
+            color: const Color.fromRGBO(0, 0, 0, 1.3),
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),
