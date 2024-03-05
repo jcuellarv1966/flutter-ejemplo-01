@@ -10,6 +10,7 @@ import 'package:curso_delivery_app/src/features/presentation/welcome_page/view/w
 import 'package:curso_delivery_app/src/features/presentation/filter_page/customWidgets/categories_filters.dart';
 import 'package:curso_delivery_app/src/features/presentation/categories_page/View/categories_page.dart';
 import 'package:curso_delivery_app/src/features/presentation/categorie_detail_page/View/categorie_detail_page.dart';
+import 'package:curso_delivery_app/src/features/presentation/asset_detail_page/View/asset_detail_page.dart';
 
 final routes = <String, WidgetBuilder>{
   'welcome': (BuildContext context) => WelcomePage(),
@@ -22,4 +23,5 @@ final routes = <String, WidgetBuilder>{
   'filter-categories': (BuildContext context) => const CategoriesFilter(),
   'categories': (BuildContext context) => const CategoriesPage(),
   'categorie-detail': (BuildContext context) => const CategorieDetailPage(),
+  'asset-detail': (BuildContext context) => const AssetDetailPage(),
 };
