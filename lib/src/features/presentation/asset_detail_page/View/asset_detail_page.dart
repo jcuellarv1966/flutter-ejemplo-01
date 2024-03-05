@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:curso_delivery_app/src/colors/colors.dart';
 import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_text.dart';
+import 'package:curso_delivery_app/src/features/presentation/common-widgets/Headers/header_double.dart';
 
 class AssetDetailPage extends StatelessWidget {
   const AssetDetailPage({super.key});
@@ -9,13 +10,29 @@ class AssetDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: SizedBox(
+        height: 36.0,
+        width: 320.0,
+        child: FloatingActionButton.extended(
+            backgroundColor: orange,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0)),
+            onPressed: () {},
+            label: headerText(
+              texto: "Add to Cart",
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
+              fontSize: 14.0,
+            )),
+      ),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
             iconTheme: const IconThemeData(
               color: Colors.white, //change your color here
             ),
-            expandedHeight: 420.0,
+            expandedHeight: 360.0, // 420.0,
             backgroundColor: orange,
             flexibleSpace: FlexibleSpaceBar(
               background: Stack(
@@ -23,7 +40,7 @@ class AssetDetailPage extends StatelessWidget {
                   const ClipRRect(
                     child: Image(
                       width: double.infinity,
-                      height: 350,
+                      height: 290, //350,
                       fit: BoxFit.cover,
                       image: NetworkImage(
                           "https://images.unsplash.com/photo-1579689252125-767b773f3f69?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJvbHNhJTIwZGUlMjBWYWxvcmVzfGVufDB8MXwwfHx8MA%3D%3D"),
@@ -31,7 +48,7 @@ class AssetDetailPage extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    height: 350,
+                    height: 290, //350,
                     decoration: const BoxDecoration(
                       color: Color.fromRGBO(0, 0, 0, 1.3),
                     ),
@@ -68,45 +85,17 @@ class AssetDetailPage extends StatelessWidget {
           ),
           SliverList(
               delegate: SliverChildListDelegate([
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 children: [
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
-                  Text("Hola ..."),
+                  _headers(texto: "Populars Offers"),
+                  _sliderCards(),
+                  _headers(texto: "Full Options"),
+                  _assetContentList(context),
+                  const SizedBox(
+                    height: 120.0,
+                  ),
                 ],
               ),
             )
@@ -120,7 +109,7 @@ class AssetDetailPage extends StatelessWidget {
 Widget _promoButton() {
   return Container(
     margin: const EdgeInsets.only(
-      top: 122,
+      top: 88,
       left: 20.0,
       right: 10.0,
     ),
@@ -189,9 +178,9 @@ Widget _infoAsset() {
 
 Widget _infoAssetStats() {
   return Container(
-    margin: const EdgeInsets.only(top: 26.0),
+    margin: const EdgeInsets.only(top: 10.0), // (top: 26.0),
     padding: const EdgeInsets.symmetric(horizontal: 28.0),
-    height: 70.0,
+    height: 60.0,
     decoration: const BoxDecoration(
         border: Border(
       top: BorderSide(color: Colors.white, width: 0.25),
@@ -333,6 +322,118 @@ Widget _offerBanner() {
                 ),
               )),
         ),
+      ],
+    ),
+  );
+}
+
+Widget _headers({required String texto}) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 0.0),
+    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+    child: headerDoubleText(textHeader: texto, textAction: "", func: () {}),
+  );
+}
+
+Widget _sliderCards() {
+  return Container(
+      height: 240.0,
+      margin: const EdgeInsets.symmetric(vertical: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return _cards(context);
+          }));
+}
+
+Widget _cards(BuildContext context) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.pushNamed(context, "asset-detail");
+    },
+    child: Container(
+      margin: const EdgeInsets.only(right: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: const Image(
+                width: 200.0,
+                height: 160.0,
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    "https://images.unsplash.com/photo-1612178991541-b48cc8e92a4d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9sc2ElMjBkZSUyMFZhbG9yZXN8ZW58MHwwfDB8fHww")),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            margin: const EdgeInsets.only(top: 5.0),
+            child: headerText(
+                texto: "Public Note of USA",
+                fontWeight: FontWeight.w600,
+                fontSize: 14.0),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            margin: const EdgeInsets.only(top: 0.0),
+            child: headerText(
+                texto: "9.50 USA",
+                color: gris,
+                fontWeight: FontWeight.w400,
+                fontSize: 12.0),
+          ),
+          Row(children: [
+            Container(
+              margin: const EdgeInsets.only(top: 5.0),
+              child: headerText(
+                  texto: "Select",
+                  color: orange,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.0),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 0.0, left: 142),
+              child: const Icon(
+                Icons.add_circle_outline_outlined,
+                color: Colors.orange,
+                size: 20.0,
+              ),
+            ),
+          ]),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget _assetContentList(BuildContext context) {
+  return Column(
+    children: [
+      _assetContentItems(context, "Note  30d", "3"),
+      _assetContentItems(context, "Note  60d", "1"),
+      _assetContentItems(context, "Note  90d", "4"),
+      _assetContentItems(context, "Note 120d", "2"),
+      _assetContentItems(context, "Note 150d", "5"),
+      _assetContentItems(context, "Note 180d", "7"),
+    ],
+  );
+}
+
+Widget _assetContentItems(
+    BuildContext context, String texto, String itemCount) {
+  return Container(
+    decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: gris, width: 0.25))),
+    child: Column(
+      children: [
+        ListTile(
+          title: headerText(
+              texto: texto, fontWeight: FontWeight.w400, fontSize: 12.0),
+          trailing: headerText(
+              texto: itemCount, fontWeight: FontWeight.w400, fontSize: 12.0),
+        ),
+        _sliderCards()
       ],
     ),
   );
