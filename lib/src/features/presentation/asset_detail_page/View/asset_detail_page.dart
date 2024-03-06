@@ -93,8 +93,12 @@ class AssetDetailPage extends StatelessWidget {
                   _sliderCards(),
                   _headers(texto: "Full Options"),
                   _assetContentList(context),
+                  _headers(texto: "Reviews"),
+                  _reviews(context),
+                  _headers(texto: "Your Rating"),
+                  _yourRating(),
                   const SizedBox(
-                    height: 120.0,
+                    height: 150.0,
                   ),
                 ],
               ),
@@ -434,6 +438,258 @@ Widget _assetContentItems(
               texto: itemCount, fontWeight: FontWeight.w400, fontSize: 12.0),
         ),
         _sliderCards()
+      ],
+    ),
+  );
+}
+
+Widget _reviews(BuildContext context) {
+  return Container(
+    height: 150.0,
+    margin: const EdgeInsets.only(top: 5.0),
+    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+    child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          return _cardReviews();
+        }),
+  );
+}
+
+Widget _cardReviews() {
+  var lorem =
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
+  return Container(
+      margin: const EdgeInsets.only(right: 15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 0.0),
+      width: 260.0,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5.0),
+                child: const Image(
+                    width: 48.0,
+                    height: 48.0,
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbmtpbmd8ZW58MHx8MHx8fDA%3D")),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 10.0),
+                height: 35.0,
+                child: Container(
+                  margin: const EdgeInsets.only(left: 0.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      headerText(texto: "Louis Amstrong", fontSize: 12.0),
+                      headerText(
+                          texto: "128 Reviews",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0),
+                    ],
+                  ),
+                ),
+              ),
+              const Spacer(),
+              // ignore: avoid_unnecessary_containers
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Container(
+                      width: 60.0,
+                      height: 25.0,
+                      color: orange,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          headerText(
+                              texto: "4",
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.0),
+                          const Icon(
+                            Icons.star,
+                            color: Colors.white,
+                            size: 12.0,
+                          )
+                        ],
+                      )),
+                ),
+              ),
+            ],
+          ),
+          Container(
+              margin: const EdgeInsets.only(top: 5.0),
+              child: headerText(
+                  texto: lorem,
+                  color: gris,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.0,
+                  textAlign: TextAlign.left)),
+          Container(
+              margin: const EdgeInsets.only(top: 5.0),
+              child: headerText(
+                texto: "See full reviews",
+                color: orange,
+                fontWeight: FontWeight.w900,
+                fontSize: 16.0,
+              ))
+        ],
+      ));
+}
+
+Widget _yourRating() {
+  var lorem =
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
+
+  return Container(
+    margin: const EdgeInsets.only(top: 5.0),
+    padding: const EdgeInsets.symmetric(horizontal: 0.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            // ignore: avoid_unnecessary_containers
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Container(
+                    width: 60.0,
+                    height: 25.0,
+                    color: orangeWithHalfOpacity,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        headerText(
+                            texto: "1",
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12.0),
+                        const Icon(
+                          Icons.star,
+                          color: Colors.white,
+                          size: 12.0,
+                        )
+                      ],
+                    )),
+              ),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                  width: 60.0,
+                  height: 25.0,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: "2",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.white,
+                        size: 12.0,
+                      )
+                    ],
+                  )),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                  width: 60.0,
+                  height: 25.0,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: "3",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.white,
+                        size: 12.0,
+                      )
+                    ],
+                  )),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                  width: 60.0,
+                  height: 25.0,
+                  color: orange,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: "4",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.white,
+                        size: 12.0,
+                      )
+                    ],
+                  )),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                  width: 60.0,
+                  height: 25.0,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: "5",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.white,
+                        size: 12.0,
+                      )
+                    ],
+                  )),
+            ),
+          ],
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 5.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: headerText(
+              texto: lorem,
+              color: gris,
+              fontWeight: FontWeight.w400,
+              fontSize: 12.0,
+              textAlign: TextAlign.left),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          margin: const EdgeInsets.only(top: 5.0),
+          child: headerText(
+              texto: "+ Edit your review",
+              color: orange,
+              fontWeight: FontWeight.w500,
+              fontSize: 12.0,
+              textAlign: TextAlign.left),
+        ),
       ],
     ),
   );
