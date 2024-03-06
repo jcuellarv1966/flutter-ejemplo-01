@@ -417,9 +417,6 @@ Widget _assetContentList(BuildContext context) {
       _assetContentItems(context, "Note  30d", "3"),
       _assetContentItems(context, "Note  60d", "1"),
       _assetContentItems(context, "Note  90d", "4"),
-      _assetContentItems(context, "Note 120d", "2"),
-      _assetContentItems(context, "Note 150d", "5"),
-      _assetContentItems(context, "Note 180d", "7"),
     ],
   );
 }
@@ -681,8 +678,8 @@ Widget _yourRating() {
               textAlign: TextAlign.left),
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           margin: const EdgeInsets.only(top: 5.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: headerText(
               texto: "+ Edit your review",
               color: orange,
