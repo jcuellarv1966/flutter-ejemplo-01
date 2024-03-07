@@ -19,41 +19,44 @@ class _MyOrderTabState extends State<MyOrderTab> {
     return Center(
       // ignore: avoid_unnecessary_containers
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 40.0),
-        margin: const EdgeInsets.symmetric(horizontal: 10.0),
+        /* padding: const EdgeInsets.symmetric(vertical: 40.0),
+        margin: const EdgeInsets.symmetric(horizontal: 10.0), */
         child: Scaffold(
           backgroundColor: bgGreyPage,
           body: emptyOrderState
               ? const EmptyOrderView()
               : CustomScrollView(
-                  slivers: [
+                  slivers: <Widget>[
                     SliverAppBar(
-                      elevation: 0.5,
-                      leading: const Text(""),
-                      backgroundColor: white,
+                      iconTheme: const IconThemeData(
+                        color: Colors.white, //change your color here
+                      ),
+                      expandedHeight: 20.0, // 420.0,
+                      backgroundColor: orange,
                       title: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 72.0),
                         child: headerText(
                             texto: "My Order",
-                            color: primaryColor,
+                            color: white,
                             fontWeight: FontWeight.w600,
                             fontSize: 24.0,
                             textAlign: TextAlign.center),
                       ),
                     ),
                     SliverList(
-                        delegate: SliverChildListDelegate(
-                      [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Column(
-                            children: [
-                              _orders(context),
-                            ],
-                          ),
-                        )
-                      ],
-                    ))
+                        delegate: SliverChildListDelegate([
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Column(
+                          children: [
+                            _orders(context),
+                            _orders(context),
+                            const SizedBox(height: 0.0),
+                            _checkoutResume(context),
+                          ],
+                        ),
+                      )
+                    ]))
                   ],
                 ),
         ),
@@ -212,5 +215,106 @@ Widget _moreContent(BuildContext context) {
         fontSize: 15.0,
       ),
     ),
+  );
+}
+
+Widget _checkoutResume(context) {
+  return Container(
+    padding: const EdgeInsets.symmetric(horizontal: 0.0),
+    margin: const EdgeInsets.only(top: 20.0),
+    width: double.infinity,
+    height: 230.0,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5.0),
+        color: const Color.fromRGBO(248, 248, 248, 1.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(210, 211, 215, 1.0),
+            offset: Offset(0.5, 7.0),
+            blurRadius: 4.0,
+          )
+        ]),
+    child: ListTile(
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _itemsCheckoutResume(
+              context: context, title: "Subtotal", value: "100.00 USA"),
+          _itemsCheckoutResume(
+              context: context, title: "Tax & Fee", value: "8.00 USA"),
+          _itemsCheckoutResume(
+              context: context, title: "Comission", value: "Free"),
+          _buttonCheckout(context),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget _itemsCheckoutResume(
+    {required BuildContext context,
+    required String title,
+    required String value}) {
+  return Container(
+    padding: const EdgeInsets.symmetric(horizontal: 0.0),
+    decoration: BoxDecoration(
+      border: Border(
+          bottom:
+              BorderSide(color: Theme.of(context).dividerColor, width: 0.5)),
+    ),
+    child: ListTile(
+      title: headerText(
+        texto: title,
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+      ),
+      trailing: headerText(
+        texto: value,
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+      ),
+    ),
+  );
+}
+
+Widget _buttonCheckout(context) {
+  return Container(
+    margin: const EdgeInsets.only(top: 10.0),
+    width: double.infinity,
+    height: 35.0,
+    child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: orange,
+          elevation: 0.5,
+          shape: const BeveledRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(5))),
+        ),
+        onPressed: () {},
+        child: Align(
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(),
+              Container(
+                margin: const EdgeInsets.only(left: 50.0),
+                child: headerText(
+                  texto: "Continue",
+                  color: white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15.0,
+                ),
+              ),
+              Container(
+                child: headerText(
+                  texto: "108.00 USA",
+                  color: white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15.0,
+                ),
+              ),
+            ],
+          ),
+        )),
   );
 }
