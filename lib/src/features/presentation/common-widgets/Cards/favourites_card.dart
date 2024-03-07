@@ -24,7 +24,7 @@ Widget favouritesCard({
         right: marginRight,
         bottom: marginBottom,
         left: marginLeft),
-    padding: const EdgeInsets.all(5.0),
+    padding: const EdgeInsets.all(8.0),
     width: double.infinity,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -63,9 +63,9 @@ Widget favouritesCard({
                         texto: title,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18.0),
+                        fontSize: 14.0),
                   ),
-                  const SizedBox(width: 30.0),
+                  const SizedBox(width: 0.0),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.bookmark,
